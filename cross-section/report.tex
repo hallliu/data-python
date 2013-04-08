@@ -1,0 +1,376 @@
+\documentclass{amsart}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumerate}
+\newcommand{\tab}{\hspace*{5em}}
+\newcommand{\conj}{\overline}
+\newcommand{\dd}{\partial}
+\title{Gamma-ray cross-sections of iron}
+\author{Haoru Liu}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Data}
+Our data consisted of $7$ gamma ray energies with intensities measured across $7$ or $8$ absorber thicknesses each, depending on the source intensity. They ranged from $81.3$keV to $1330$keV. The thicknesses were measured to within $0.05$mm in all cases, and the detector had a time resolution of $1$ second. For the $1270$keV, $511$keV, and $662$keV energies, the gross count was taken from the spectrum analyzer, and the actual count obtained by taking a separate measurment of the background intensity and subtracting. For all other energies, the reported count is the net count from the spectrum analyzer, which was obtained by integrating the region above a straight line connecting the left-most point of the ROI to the right-most point of the ROI. Below are tables summarizing our data. The 81.3keV energy was a special case which will be discussed in our analysis. Finally, we include a plot of the raw data from the spectrum analyzer for Na-22.
+
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{1170keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$32$ & $3756$ & $493$ \\
+$16$ & $5454$ & $363$ \\
+$8$ & $12128$ & $600$ \\
+$4$ & $7721$ & $300$ \\
+$2$ & $6855$ & $277$ \\
+$1$ & $7898$ & $286$ \\
+$0$ & $5022$ & $174$ \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{1270keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$BG$ & $780$ & $130$ \\
+$56$ & $9593$ & $300$ \\
+$32$ & $11335$ & $160$ \\
+$16$ & $11990$ & $90$ \\
+$8$ & $11569$ & $65$ \\
+$4$ & $12271$ & $60$ \\
+$2$ & $11548$ & $52$ \\
+$1$ & $11270$ & $48$ \\
+$0$ & $10694$ & $44$ \\
+\hline
+\end{tabular}
+\newline
+
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{662keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$BG$ & $1274$ & $185$ \\
+$56$ & $7971$ & $300$ \\
+$32$ & $10631$ & $155$ \\
+$16$ & $11431$ & $80$ \\
+$8$ & $10324$ & $50$ \\
+$4$ & $11135$ & $45$ \\
+$2$ & $10806$ & $40$ \\
+$1$ & $11247$ & $40$ \\
+$0$ & $18506$ & $63$ \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{1330keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$32$ & $3671$ & $493$ \\
+$16$ & $5335$ & $363$ \\
+$8$ & $11827$ & $600$ \\
+$4$ & $7017$ & $300$ \\
+$2$ & $6834$ & $377$ \\
+$1$ & $7318$ & $286$ \\
+$0$ & $4425$ & $174$ \\
+\hline
+\end{tabular}
+
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{81.3keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$16$ & $2166$ & $300$ \\
+$8$ & $9038$ & $204$ \\
+$4$ & $12910$ & $54$ \\
+$2$ & $18580$ & $36$ \\
+$1$ & $24432$ & $32$ \\
+$0$ & $73590$ & $66$ \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}[t]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{511keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$BG$ & $5494$ & $176$ \\
+$56$ & $10508$ & $105$ \\
+$32$ & $14229$ & $56$ \\
+$16$ & $16539$ & $31$ \\
+$8$ & $24206$ & $30$ \\
+$4$ & $29974$ & $30$ \\
+$2$ & $32943$ & $30$ \\
+$1$ & $34541$ & $30$ \\
+$0$ & $67913$ & $56$ \\
+\hline
+\end{tabular}
+\newline
+
+\begin{tabular}[b]{|c|l|l|}
+\hline
+\multicolumn{3}{|c|}{360keV}\\
+\hline
+Thickness(mm) & Count & Time(s)\\
+$56$ & $8651$ & $300$ \\
+$32$ & $10765$ & $97$ \\
+$16$ & $94352$ & $300$ \\
+$8$ & $114761$ & $204$ \\
+$4$ & $39704$ & $54$ \\
+$2$ & $30219$ & $36$ \\
+$1$ & $29473$ & $32$ \\
+$0$ & $65395$ & $66$ \\
+\hline
+\end{tabular}
+\includegraphics[width=240pt]{spectrum.png}
+\section{Analysis}
+To analyze the data, we divided the count by time in order to obtain intensity, then used the SciPy libraries to perform a least-squares fit of intensity($I$) versus thickness($x$) on the equation $Ae^{-Bx}+C$, where $A$, $B$, and $C$ are free parameters. Results of the fits are shown below for each energy.\\
+
+\includegraphics[width=240pt]{{81.3keV}.png}
+\includegraphics[width=240pt]{{360.0keV}.png}\\
+\includegraphics[width=240pt]{{511.0keV}.png}
+\includegraphics[width=240pt]{{662.0keV}.png}\\
+\includegraphics[width=240pt]{{1170.0keV}.png}
+\includegraphics[width=240pt]{{1270.0keV}.png}\\
+\includegraphics[width=240pt]{{1330.0keV}.png}
+
+We can then plot the linear attenuation coefficients versus frequency on a log-log graph, presented like the given literature values of attenuation coefficient versus frequency. The plot is shown in Figure \ref{att_coefs}.
+
+\begin{figure}
+\centering
+\includegraphics[width=240pt]{att_coefs.png}
+\caption{Attenuation coefficients}
+\label{att_coefs}
+\end{figure}
+
+From a data dump of the spectrum analyzer for the emissions of Co-60, we can estimate the energy resolution of the detector. First, we restrict the channel range of the data to between channels $452$ and $500$, inclusive. Then, we fit a Gaussian curve, $Ae^{-\frac{(x-\mu)^2}{\sigma^2}}$ to the data, where $A$, $\mu$ and $\sigma$ are allowed to vary. Using the same method as given in the scripts, we calculate the uncertainty (standard deviation) for the fitted value of $\mu$. The results are summarized in Figure \ref{peakplot}.
+
+\begin{figure}
+\centering
+\includegraphics[width=240pt]{1330peakplot.png}\\
+\caption{Plot of the 1330keV peak}
+\label{peakplot}
+\end{figure}
+
+We can now estimate the energy resolution. Assuming that energy and channel follow a linear (not just affine) relationship, we can divide the energy by the channel of the peak to obtain the energy per channel. In this case, it is $2.79$keV per channel. 
+\section{Results}
+For the sake of clarity, we present a table of results before discussing them. The cross-section was obtained simply by dividing the linear attenuation coefficient by $N$, the number of electrons per cubic centimeter of iron. From data given by Wolfram Alpha, this value is $2.208\times10^{24}$.
+
+\begin{tabular}{|c|c|c|}
+\hline
+Energy(keV) & Linear attenuation coefficient($\text{cm}^{-1}$) & Cross-section($\text{cm}^2$)\\
+\hline
+$662.0$ & $0.483\pm0.006$ & $2.19\times10^{-25}\pm2.5\times10^{-27}$\\
+$360.0$ & $0.73\pm0.01$ & $3.29\times10^{-25}\pm4.5\times10^{-27}$\\
+$81.3$ & $4.22\pm0.08$ & $1.91\times10^{-24}\pm3.5\times10^{-26}$\\
+$1170.0$ & $0.4\pm0.1$ & $1.8\times10^{-25}\pm4.7\times10^{-26}$\\
+$1330.0$ & $0.026\pm0.4$ & $1.2\times10^{-26}\pm1.8\times10^{-25}$\\
+$1270.0$ & $0.41\pm0.01$ & $1.86\times10^{-25}\pm4.4\times10^{-27}$\\
+$511.0$ & $0.534\pm0.003$ & $2.42\times10^{-25}\pm1.4\times10^{-27}$\\
+\hline
+\end{tabular}
+
+All uncertainties cited above are standard deviations as reported by the fitting script.
+
+If we refer back to Figure \ref{att_coefs} and compare to the graph of accepted literature values (Figure \ref{litiron} in the Appendix), we see a close correspondence except for the outlier at $1330$keV. Indeed, if we examine the error of this value above, we see that it is an order of magnitude greater than the value itself. In fact, the error was not presented on the plot due to the logarithmic nature of the plot, as plotting the bottom edge of the error bar would have required taking a logarithm of a negative value. Due to the low intensity of the source and the fact that the $1170$keV data (measured simultaneously) also shows large residuals near the lower thicknesses, it is plausible that a stray source of radiation was present during the measurement that distorted the data for both peaks. 
+
+We now examine a few values in more detail. At the $360$keV point, the measured linear attenuation coefficient was $0.73\pm0.01\text{cm}^{-1}$. If we read off Figure \ref{litiron}, we get a value of $0.75\text{cm}^{-1}$. This is fairly close to our measured value, and perhaps would be within one standard deviation if the uncertainty in the literature values were known. At this point, the Compton scattering curve lies above the photoelectric effect curve in Figure \ref{litiron}, so we expect the Compton effect to be dominant. The dominance of the Compton effect becomes more complete at the $1270$keV energy, where the literature value of the attenuation coefficient is $0.40\text{cm}^{-1}$, and the Compton curve is identical to the total curve. In contrast, at the $81.3$keV point, the literature value of the attenuation coefficient is $4.2\text{cm}^{-1}$, which is again fairly close to our measurements. Here, we see a sharp rise in the attenuation coefficient as compared to the rest of the energies, and this is due to the photoelectric energy dominating our observations (again, as seen in Figure \ref{litiron}). We then conclude that the Compton effect was responsible for the scattering over most of our energy range, with the exception of the $81.7$keV point where the photoelectric effect was dominant.
+\newpage
+\section{Appendix}
+\subsection{Results from the day 2 lab exercises}
+Exercise 1:
+
+\includegraphics[width=240pt]{practice_scripts/e1.png}
+
+Exercise 2:
+
+\includegraphics[width=240pt]{practice_scripts/e2a.png}
+\newpage
+Exercise 3a:
+
+\includegraphics[width=240pt]{practice_scripts/e3a.png}
+
+Exercise 3c:
+
+\includegraphics[width=240pt]{practice_scripts/e3c.png}
+\subsection{Graph of linear attenuation coefficients}
+\begin{figure}
+\center
+\nopagebreak
+\includegraphics[width=300pt]{iron-xsection.pdf}
+\caption{Literature values of the linear attenuation coefficient of iron}
+\label{litiron}
+\end{figure}
+\newpage
+\subsection{Code used in analysis}
+Note: I'm not sure if this is necessary, so I'm going to stick it at the end and see if anyone cares.
+\begin{verbatim}
+#!/usr/bin/python
+import numpy as np
+from pylab import *
+from scipy.optimize import leastsq
+
+energy,thickness,count,time = loadtxt('data',unpack=True,usecols=[0,1,2,3])
+
+toBeRemoved = []
+currenergy = 0
+bgrate = 0
+
+for (i,t) in enumerate(thickness):
+    if t == -1:
+        currenergy = energy[i]
+        bgrate = count[i]/time[i]
+        toBeRemoved.append(i)
+    else:
+        if energy[i] == currenergy:
+            count[i] = count[i]-bgrate*time[i]
+
+energy=np.delete(energy,toBeRemoved)
+thickness=np.delete(thickness,toBeRemoved)
+count=np.delete(count,toBeRemoved)
+time=np.delete(time,toBeRemoved)
+
+thickness_err = 0.5*np.ones(thickness.shape)
+
+count_err = np.empty(count.shape)
+#switch over to cm thicknesses
+thickness = 0.1*thickness
+
+for (i,c) in enumerate(count):
+    count_err[i] = np.sqrt(c)
+
+time_err = np.ones(time.shape)
+
+intensity = count/time
+# remove sqrt if errors are too small
+intensity_err = intensity*np.sqrt((count_err/count)**2+(time_err/time)**2)
+
+#partition in terms of energy
+energydata = dict()
+for i in set(energy):
+    energydata[i]=([],[],[])
+
+for i,t in enumerate(thickness):
+    energydata[energy[i]][0].append(t)
+
+for i,t in enumerate(intensity):
+    energydata[energy[i]][1].append(t)
+
+for i,t in enumerate(intensity_err):
+    energydata[energy[i]][2].append(t)
+
+
+
+class Parameter:
+    def __init__(self, initialvalue, name):
+        self.value = initialvalue
+        self.name=name
+    def set(self, value):
+        self.value = value
+    def __call__(self):
+        return self.value
+
+def fit(function, parameters, x, data, u):
+    def fitfun(params):
+        for i,p in enumerate(parameters):
+            p.set(params[i])
+        return (data - function(x))/u
+ 
+    if x is None: x = arange(data.shape[0])
+    if u is None: u = ones(data.shape[0],"float")
+    p = [param() for param in parameters]
+    return leastsq(fitfun, p, full_output=1)
+
+info = dict()
+att_coef = dict()
+att_errs = dict()
+
+iron_const = 8.491767433789953e+22*26
+for e in energydata.keys():
+    A = Parameter(1.,'A')
+    B = Parameter(1.,'B')
+    C = Parameter(1.,'C')
+    p0 = [A,B,C]
+    def expfit(r):
+        return A()*exp(-r*B())+C()
+    (p2,cov,info,msg,success) = fit(expfit,p0,np.array(energydata[e][0]), np.array(energydata[e][1]), np.array(energydata[e][2]))
+    chisq = sum(info['fvec']*info['fvec'])
+    dof = len(energydata[e][0])-len(p0)
+    print "Energy ",e,A(),B(),B()/iron_const
+    att_coef[e] = B()
+    att_errs[e] = sqrt(cov[1,1])*sqrt(chisq/dof)
+    print "Fitted parameters at minimum, with 68% C.I.:"
+    for i,pmin in enumerate(p2):
+        print "%2i %-10s %12f +/- %10f"%(i,p0[i].name,pmin,sqrt(cov[i,i])*sqrt(chisq/dof))
+    print
+
+    fig = matplotlib.pyplot.figure()
+    errorbar(np.array(energydata[e][0]),np.array(energydata[e][1]),yerr=np.array(energydata[e][2]),xerr=0.005,fmt='r.',label='Data')
+    xplot = linspace(-0.1,6,70)
+    yplot = expfit(xplot)
+    ax = axes()
+    ax.plot(xplot,yplot,'b-',label='Fit')
+    ax.text(0.4,0.7,"Fit equation: $%.3fe^{-%.3fx}+(%.3f)$\nReduced Chi-Sq: %.3f\n"%(A(),B(),C(),chisq/dof),fontsize=12,
+        horizontalalignment='left',transform = ax.transAxes)
+    xlabel('Absorber thickness(cm)')
+    ylabel('Intensity(counts/second)')
+    title(str(e)+'keV data and fit')
+    legend()
+    fig.savefig(str(e)+'keV.png',format='png')
+    
+figure()
+ax = axes()
+es = np.array(energydata.keys())
+cs = np.empty(es.shape)
+ce = np.empty(es.shape)
+for (i,e) in enumerate(es):
+    cs[i] = att_coef[e]
+    ce[i] = att_errs[e]
+
+ax.errorbar(es,cs,yerr=ce,fmt='r.',label='Attenuation coefficients')
+ax.set_xscale('log')
+ax.set_yscale('log')
+xlabel('log(energy)')
+ylabel('log(attenuation coefficient)')
+savefig('att_coefs.png',format='png')
+for i in range(len(energydata.keys())):
+    print '$'+str(es[i])+'$ & $'+str(cs[i])+'\\pm'+str(ce[i])+'$ & $' + str(cs[i]/iron_const)+"\\pm"+str(ce[i]/iron_const)+'$\\\\'
+
+#now fit the gaussian to the peak
+chan,chanct=loadtxt('1330peak',unpack=True,usecols=[0,1])
+cterr = sqrt(chanct)+1e-5
+
+figure()
+title('The 1330keV peak of Na-22 with a Gaussian fit')
+R = Parameter(3500.,'R')
+u = Parameter(480.,'u')
+s = Parameter(6,'s')
+p0=[R,u,s]
+def gaussian(x):
+    return R()*exp(-((x-u())**2)/(s()**2))
+p2,cov,info,mesg,success=fit(gaussian, p0, chan, chanct, cterr)
+
+chisq = sum(info['fvec']*info['fvec'])
+dof = len(chan)-len(p0)
+
+freqs = linspace(445,505,200)
+fittedplot = gaussian(freqs)
+
+errorbar(chan,chanct,yerr=cterr,fmt='r.',label='Count data')
+ax=axes()
+ax.plot(freqs,fittedplot,'b-',label='fit')
+ax.text(0.4,0.2,"Mean: $%.3f\\pm%.3f$\nStandard deviation:$%.3f$"%(u(),sqrt(cov[1,1]*sqrt(chisq/dof)),s()),fontsize=12,
+    horizontalalignment='left',transform = ax.transAxes)
+xlabel('Channel')
+ylabel('Counts')
+legend()
+savefig('1330peakplot.png',format='png')
+\end{verbatim}
+
+\end{document}

@@ -1,0 +1,11 @@
+\contentsline {section}{\tocsection {}{1}{Procedure}}{1}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Alignment and adjustment of components}}{1}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Measuring the splitting for $\Delta m=0$ transitions viewed perpendicular to $B$}}{2}
+\contentsline {subsection}{\tocsubsection {}{1.3}{Measuring the intensities for $\Delta m=\pm 1$ transitions viewed parallel to $B$}}{2}
+\contentsline {subsection}{\tocsubsection {}{1.4}{Measuring the value of $|B|$}}{2}
+\contentsline {section}{\tocsection {}{2}{Data and Analysis}}{2}
+\contentsline {section}{\tocsection {}{3}{Discussion}}{6}
+\contentsline {section}{\tocsection {}{4}{Appendix}}{7}
+\contentsline {subsection}{\tocsubsection {}{4.1}{Tables of radii with uncertainties}}{7}
+\contentsline {subsection}{\tocsubsection {}{4.2}{Plots of the $r^2$ vs. $p$ fits}}{8}
+\contentsline {subsection}{\tocsubsection {}{4.3}{Fit of $\Delta E$ vs. B for the bc split}}{17}

@@ -1,0 +1,5 @@
+taking the ith ring radius to be the diameter over 2
+for 0.103V, the peaks on the left are indistinct, so taking the center peak
+    of the first ring set and averaging to find the center, then using the
+    right side only
+Uncertainties in peak position estimated by eye, then propagated through

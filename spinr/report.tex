@@ -1,0 +1,222 @@
+\documentclass{amsart}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{wrapfig}
+\restylefloat{table}
+\newcommand{\nc}{\newcommand}
+\newcommand{\tab}{\hspace*{7em}}
+\newcommand{\conj}{\overline}
+\newcommand{\dd}{\partial}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\nc{\ep}{\epsilon}
+\numberwithin{equation}{section}
+
+\title{Electron Spin Resonance}
+\author{Haoru Liu}
+\begin{document}
+\maketitle
+{\centering{Lab partner: Xu Xiao}\\}
+\tableofcontents
+\section{Introduction}
+\subsection{Theory}
+In classical mechanics, the interaction between a magnetic dipole and an external magnetic field is given by the relation
+\begin{equation}
+\vec{\tau}=\vec{\mu}\times\vec{B}\text{,}
+\end{equation}
+where $\vec{\tau}$ is the torque exerted on the dipole. For a dipole with no intrinsic angular momentum (such as a stationary magnet), the effect of this torque is to rotate the dipole so that it aligns with the magnetic field. We can use this effect to measure the magnitude of a dipole. Let the external magnetic field be oriented antiparallel to gravity, and suppose that an object of mass $m$ were attached to the dipole at a distance $r$ so that the force of gravity on the mass exerts a torque on the dipole. Then, if we set the magnitude of the external field to a point where the net torque on the dipole is zero, we have the following equation:
+\begin{equation*}
+\vec{\mu}\times\vec{B}=-m\vec{r}\times\vec{g}\text{.}
+\end{equation*}
+
+Since $\vec{B}$ is antiparallel to gravity, the above equation reduces to the scalar equation $\mu B\sin\theta=rmg\sin\theta$ or 
+\begin{equation}
+\label{gravfiteqn}
+\mu B=rmg\text{,}
+\end{equation} 
+where $\theta$ is the angle of the dipole from vertical.
+
+In practice, this allows us to determine the value of $\mu$ by measuring the magnitude of $B$ necessary to balance the dipole over several values of $r$ and performing a linear fit to $B=\frac{rmg}{\mu}$. Conveniently, this also allows us to ignore any gravitational torque that does not vary with the value of $r$, such as any asymmetries in the mass constituting the dipole. In the scalar equation, they manifest themselves as a constant factor added to the RHS, and consequently they only affect the $y$-intercept of the fitted equation, not the slope.
+
+In the case where the dipole possesses intrinsic angular momentum parallel or antiparallel to its dipole moment, the effect of the torque from the external field changes. Suppose that the angular momentum (and the dipole moment) are at an angle $\theta$ from vertical. Then, the torque produced is orthogonal to the angular momentum with magnitude $\mu B\sin\theta$. The overall effect of this torque constantly exerted at a right angle to the angular momentum is the precession of the direction of angular momentum, with $|\tau|=\Big|\frac{d\vec{L}}{dt}\Big|$. If we project $L$ onto the plane that $\vec{\tau}$ spans as it rotates, we get a point rotating about a circle of radius $L\sin\theta$ with velocity $\tau$. This translates to an angular velocity of $\omega=\frac{\tau}{r}=\frac{\tau}{L\sin\theta}$, or a period of
+\begin{equation}
+\label{clasperiod}
+T=\frac{2\pi}{\omega}=\frac{2\pi L\sin\theta}{\tau}=\frac{2\pi L\sin\theta}{\mu B\sin\theta}=\frac{2\pi L}{\mu B}\text{.}
+\end{equation}
+
+Now, we have another way to measure $\mu$. Suppose we have a spherical dipole with mass $M$ and radius $R$. Assuming constant density, we can spin this sphere at a frequency $f$ to give it some angular momentum, then measure the period of the precession under some known value of $B$. We can then fit the data to the equation
+\begin{equation}
+\frac{1}{T}=\frac{\mu B}{2\pi L}=\frac{\mu B}{2\pi I\omega}=\frac{5\mu B}{8\pi^2MR^2f}\text{,}
+\end{equation}
+with $B$ as the independent variable and solve for $\mu$ using known values of all the other variables.
+
+Next, we can consider what happens if we apply another external field. Instead of having constant magnitude and direction, let the new field rotate at some fixed angular velocity $\Omega$ in the plane orthogonal to the first field. In particular, set $\Omega$ equal to the angular velocity of the precession of the dipole, and let the initial direction of the field be orthogonal to the dipole. Then, in the reference frame of the precessing dipole, the new external field appears to be constant, and the dipole undergoes precession about the direction of the new field. In the lab frame, the effect of this additional precession is to flip the dipole as it is precessing. 
+
+We now move into the quantum setting and consider an electron under the influence of an external magnetic field. A free electron with no orbital angular momentum in a magnetic field has magnetic moment along the $z$ axis (corresponding to the $S_z$ operator) either aligned or antialigned with the field with magnitude
+\begin{equation}
+\label{elecmag}
+\mu=\frac{g\mu_B}{2}
+\end{equation}
+where $\mu_B$ is a constant known as the Bohr magneton and $g\approx2.0023$. Since the energy of a dipole in a magnetic field is given by $E=-\vect{\mu}\cdot\vect{B}$, the addition of the external field lets us distinguish between the two spin states based on their energy eigenvalues. Based on the above equation for the magnitude of the dipole, we have that the difference in energy between the two spin states is
+\begin{equation}
+\label{deltae}
+\Delta E=g\mu_B B\text{.}
+\end{equation}
+
+Since electrons and photons are prone to interacting, we expect that a photon with energy equal to $\Delta E$ will interact with an electron in the ground state to flip it to the higher energy one. The excited electron should then emit a photon of the same energy and drop back into its ground state. If we calculate the frequency of this photon using equation \ref{deltae}, we obtain 
+\begin{equation}
+\omega=\frac{g\mu_B}{\hbar}B\text{.}
+\end{equation}
+Note that this has the same form as the frequency of classical precession -- classically, the angular frequency of precession is given by $$\omega=\frac{|\vec{\mu}| B}{|L|}$$ (obtained from rearranging equation \ref{clasperiod}). For electrons, $|\vec{\mu}|=g\mu_B\sqrt{1/2(1/2+1)}$ and $|L|$ is just the eigenvalue of the $\vec{S}$ operator, or $\hbar\sqrt{1/2(1/2+1)}$. Then, if we plug these into the formula for the classical precession frequency, we obtain the same frequency as the photons which excite the electrons.
+
+This is analogous to the classical case where we apply an additional rotating magnetic field to the spinning ball. In the classical sense, a photon is simply an oscillating magnetic field. If we pick the right frequency of oscillation, we should be able to induce a flip in objects small enough to be affected by the energy in a photon (such as an electron).
+\subsection{Apparatus}
+For the classical portion of this lab, we used a setup provided by TeachSpin which allowed us to observe the motion of a freely rotating magnetic dipole in a roughly constant field. The field was produced by two horizontal Helmholtz coils, current to which was regulated and displayed by a control panel. The dipole itself was a plastic sphere containing a dipole which was presumably constant in density. A small black handle was attached along the axis of the dipole to provide support for the first part of the lab, as well as to provide a convenient way to spin the dipole for the second. The handle is assumed to contribute negligibly to the rotational inertia of the sphere. The dipole is held in place at the center of the coils by a hemispherical air bearing which allows the dipole to rotate freely as long as the handle remained above the boundary of the bearing. A thin rod with a sliding mass inserted into the handle was used to provide gravitational torque for the first part of the lab. For the second part of the lab, a white dot painted on the handle along with a strobe light attached to the coils with associated frequency counter was used to fix the angular momentum of the dipole at a known value. For observing classical spin resonance, a saddle was provided which holds two permanent magnets and is free to rotate about the air bearing. When in place and stationary, the saddle provides a constant magnetic field perpendicular to that generated by the Helmholtz coils.
+
+For the quantum portion of this lab, we used a setup provided by Daedalon which allowed us to apply a magnetic field to approximately free electrons and excite them with photons of a known frequency. The free electrons were provided by a compound known as DPPH, whose molecular structure produces one approximately free electron per molecule. The DPPH was contained within a coil which detects photons produced by electrons decaying back into their ground state. The assembly was mounted on an arm attached to an RF generator which produces photons at the correct range of frequencies with $B$-component perpendicular to that of the Helmholtz coil. The DPPH was placed in the middle of a Helmholtz coil which had current varying at $60$Hz through an appropriate range. This produces a locally constant (relative to the electron precession frequency) magnetic field in the DPPH sample. The Helmholtz coils produce a magnetic field in their center linearly related to the current through the coils. A sensor operating at 1V per ampere was attached to this current supply and to channel 1 of an oscilloscope. The detection coil was attached channel 2 on the oscilloscope.
+\section{Procedure}
+\subsection{Measurement of $\mu$, first part}
+The thin rod was inserted into the black handle on the sphere and the sliding mass was slid down the rod to the position closest to the center of the sphere. The rod was then removed and the distance from the tip of the rod that was inside the sphere to the outer edge of the mass was measured. The sphere was then placed in the air bearing and the current in the Helmholtz coils turned on. The current was adjusted to the point where the position of the rod is held steady roughly parallel to the ground. The current was recorded at this point. The current was then turned up to the point where the rod is held steady at roughly 60 degrees to the ground, and the current recorded again at this point. The balancing current for this mass position was taken to be the average of the two measurements, with uncertainty taken to be half the distance between the two measurements. The thin rod was then removed, the mass slid further out, and the position measured again. The measurements were repeated ten times.
+\subsection{Measurement of $\mu$, second part}
+The strobe light attached to the Helmholtz coils was turned on and its frequency adjusted to be $5.1$Hz as determined by the frequency counter built into the control panel. The coil current was turned on and set to a multiple of $0.5$A, but with the current in the top coil inverted so that the magnetic field becomes negligible near the sphere. The sphere was placed in the air bearing without the thin rod and spun clockwise. The spin was slowed and stabilized by manual friction until the white dot on the handle appeared to stand still under the strobe light, which corresponds to a rotational frequency of $5.1$Hz. A marker set around the air bearing was rotated to a position slightly ahead of the black handle, and the current in the top coils was un-inverted to produce the appropriate field at the center of the coils. The time between when the handle passes the marker for the first time and for the second time was recorded as the precession period. 
+\subsection{Observation of classical spin resonance}
+The marker for the previous portion of the lab was removed and the saddle with permanent magnets put into place. The coil current was turned to an arbitrary value with the current inversion off, and the sphere was set spinning at a reasonable frequency. Qualitative observations were taken for the following four cases: the stationary saddle, the saddle rotating in the opposite direction as the precession, the saddle rotating in the same direction as the precession but at a different frequency, and the saddle rotating at the same frequency as the precession with the dipole moment perpendicular to the saddle field. In all cases, the saddle was rotated by hand in the smoothest possible manner.
+\subsection{Measurement of electron spin resonance}
+The equipment was turned on and the peak current in the Helmholtz coils set to $3.36$A. For each of six frequencies in a range around 27MHz, the RF emitter was set to emit photons at that frequency. The resulting signals were displayed on the oscilloscope. For each of the peaks that were displayed on channel 2 (reflecting the currents at which the photons were absorbed and re-emitted), the absolute value of the reading on channel 1 was recorded at the time of the peak. For each frequency, about 6 peaks were visible on the oscilloscope. After the measurements of all the peaks, the Helmholtz coils were re-oriented to produce a field parallel to that produced by the RF emitter and qualitative measurements were taken.
+\section{Data/Analysis}
+\subsection{Classical part -- gravitational torque}
+Ten measurements of positions of the mass along the rod were taken at uneven intervals between $45$mm and $94$mm from the inner end of the stick. Uncertainties in these values was taken to be the resolution of the calipers used, which was $\pm0.01$mm. The current in the Helmholtz coils was read from an analog meter on the control panel with an inherent uncertainty of $0.02$A. However, due to the range of currents for which the torques seemed balanced, the value was taken to be the midpoint of the range and the uncertainty to be half the width of the range. These uncertainties generally ranged from $0.04$A to $0.08$A. Data are presented in Table \ref{gravdata}. The mass of the object was measured by scale to be $1.39\pm0.01$g. 
+
+\begin{table}
+\caption{Data for determining $\mu$ through gravitational torque}
+\label{gravdata}
+\begin{tabular}[t]{|c|c|}
+\hline
+%\multicolumn{2}{|c|}{Determining $\mu$ through gravitational torque}\\
+Mass position (mm) ($\pm0.01$) & Balancing current (A)\\
+\hline
+$45.32$ & $1.52\pm0.035$\\
+$50.26$ & $1.66\pm0.045$\\
+$55.28$ & $1.74\pm0.045$\\
+$57.96$ & $1.82\pm0.055$\\
+$59.81$ & $1.85\pm0.05$\\
+$63.31$ & $1.95\pm0.05$\\
+$67.63$ & $2.04\pm0.055$\\
+$74.38$ & $2.20\pm0.055$\\
+$81.62$ & $2.38\pm0.08$\\
+$93.80$ & $2.68\pm0.08$\\
+\hline
+\end{tabular}
+\end{table}
+
+For our analysis, we converted the mass positions into centimeters. The magnetic field produced in the center of the coils is given in the lab manual to be $(1.36\pm0.03)\times10^{-3}$Tesla/A, or $13.6\pm0.3$Gauss/A. Let this value be denoted as $p$. Then, from equation \ref{gravfiteqn}, we have $\mu Ip=rmg$, where $I$ is the balancing current, $r$ is the position of the mass, $m$ is the mass of the mass, and $g$ is local gravity. From Wolfram Alpha, the value of $g$ in Chicago is $980.438$cm/s$^2$. 
+
+To determine $\mu$, we fit our data to a linear equation $y=ax+b$, with $y=Ip$, $x=rmg$, and $a=1/\mu$. The constant factor is present in order to take care of the extra torque produced by asymmetries in the ball and the thin rod. The results of our fit are presented in Figure \ref{gravfit}.
+
+\begin{figure}
+\center
+\includegraphics[width=15cm]{grav-fit.png}
+\caption{Linear fit of mass position to balancing field\\Equation: $B=(2.35\pm0.03)\times10^{-3}rmg+6.1\pm0.3$\\Reduced $\chi^2$: $0.038$}
+\label{gravfit}
+\end{figure}
+
+By computing the inverse of the slope, we find that $\mu=425\pm6$erg/G. 
+
+\subsection{Classical part -- Precession}
+In this part of the lab, the angular momentum of the ball is an important quantity to know. This was calculated from the following measurements: the mass of the ball is $137.59\pm0.01$g, the diameter is $53.77\pm0.02$mm, and the strobe light flashed at $5.1\pm0.1$Hz. From this, we have that the moment of inertia of the ball is 
+\begin{equation*}
+I=\frac{2}{5}mr^2=398\text{g}\cdot\text{cm}^2
+\end{equation*}
+with uncertainty given by 
+\begin{equation*}
+\delta I=I\sqrt{\left(\frac{\delta m}{m}\right)^2+\left(2\frac{\delta r}{r}\right)^2}=3\text{g}\cdot\text{cm}^2
+\end{equation*}
+
+The angular momentum is given by 
+\begin{equation*}
+L=I\omega=2\pi If=12700\text{erg}{\cdot}\text{s}
+\end{equation*}
+and the uncertainty by $$\delta L=L\sqrt{\left(\frac{\delta I}{I}\right)^2+\left(\frac{\delta f}{f}\right)^2}=270\text{erg}{\cdot}\text{s}$$
+
+In examining the precession, data were taken at six evenly spaced values of coil current, ranging from $1.50$A to $4.00$A. Uncertainties for the precession period were estimated at $0.1$s due to reaction time. The data are summarized in Table \ref{precdat}
+
+\begin{table}
+\begin{tabular}[t]{|c|c|}
+\hline
+Coil current (A)($\pm0.02$) & Precession period(s)($\pm0.1$)\\
+\hline
+$1.5$ & $8.4$\\
+$2.0$ & $6.9$\\
+$2.5$ & $5.3$\\
+$3.0$ & $4.3$\\
+$3.5$ & $4.0$\\
+$4.0$ & $3.4$\\
+\hline
+\end{tabular}
+\caption{Measurements for the precession period of the dipole and coil current}
+\label{precdat}
+\end{table}
+
+The relationship between the external field and the precession period is given by equation \ref{clasperiod}. Rearranging gives $\omega=\frac{\mu}{L}B$, where $\omega$ is the angular frequency of precession. We can transform the data for the coil current into a value of $B$ by the same relation as we had in the previous section, and the periods can be transformed into angular frequencies by inverting and multiplying by $2\pi$. The results of the fit are shown in Figure \ref{precfit}.
+
+\begin{figure}
+\centering
+\includegraphics[width=14cm]{prec-fit.png}
+\caption{Linear fit of the precession data\\Equation:$\omega=(0.033\pm0.0019)B+(0.06\pm0.057)$\\Reduced $\chi^2$: 1.966}
+\label{precfit}
+\end{figure}
+
+The slope of the fit here is the gyromagnetic ratio. From this, we can calculate $\mu$ by multiplying by the angular momentum of the ball. Adding relative uncertainties in quadrature, we calculate $\mu$ to be $420\pm26$erg/G. 
+
+\subsection{Electron spin resonance}
+Data were taken at six different frequencies on the RF emitter. For each frequency, $5$ or $6$ measurements were taken of voltage. Each measurement had an uncertainty of $0.04$V due to oscilloscope resolution. Since the standard deviation of voltages divided by sample size for each frequency was below $0.04$V, the uncertainty for all voltages was taken to be $0.04$V. The uncertainty in the frequencies was $0.01$MHz as determined by the resolution on the digital control panel of the frequency generator. The data are summarized in Table \ref{elecdat}.
+
+\begin{table}
+\caption{Data from electron spin resonance measurements}
+\label{elecdat}
+\begin{tabular}[t]{|c|c|c|}
+\hline
+Frequency(MHz)($\pm0.01$) & Voltages(V) & Mean voltage(V)($\pm0.04$)\\
+\hline
+$24.50$ &  $1.78$,  $1.76$,  $1.76$,  $1.76$,  $1.80$, $1.76$ & $1.77$\\
+$26.07$ &  $1.88$,  $1.76$,  $1.96$,  $1.84$,  $1.96$ & $1.88$\\
+$27.14$ &  $2.12$,  $2.00$,  $2.04$,  $2.05$,  $2.04$ & $2.05$\\
+$29.22$ &  $2.12$,  $2.16$,  $2.12$,  $2.08$,  $2.16$, $2.12$ & $2.13$\\
+$30.15$ &  $2.16$,  $2.32$,  $2.24$,  $2.24$,  $2.28$ & $2.25$\\
+$31.95$ &  $2.44$,  $2.40$,  $2.40$,  $2.40$,  $2.40$, $2.32$ & $2.41$\\
+\hline
+\end{tabular}
+\end{table}
+
+The lab manual stated that the voltage observed is precisely equal to the current through each coil and that the relationship between the field and the current was $0.48$ milliteslas per ampere or $4.8$ Gauss per ampere (given without uncertainty). Thus, we can transform our observed voltages with this relation and find the resonance frequency $\omega$ by multiplying the frequency by $2\pi$. Fitting the data to the equation $B=\gamma^{-1}\omega$, we obtain the result shown in Figure \ref{elecfit}
+
+\begin{figure}
+\centering
+\includegraphics[width=13cm]{elec-fit.png}
+\caption{Fit of spin resonance frequency versus external field (note x-axis has a scale of $10^8$ rad/s)\\
+Equation: $B=(5.64\pm0.04)\times10^{-8}\omega$\\
+Reduced $\chi^2$: $1.034$}
+\label{elecfit}
+\end{figure}
+
+From the slope of the fit, we can extract the gyromagnetic ratio of the electron, calculated to be $(1.77\pm0.014)\times10^7$Hz/G. For reference in the next section, the literature value of the gyromagnetic ratio is $1.761\times10^7$Hz/G (Wolfram Alpha).
+\FloatBarrier
+\section{Discussion}
+The values of $\mu$ obtained from balancing gravitational torque and measuring precession period agreed within uncertainty, though the result from the latter had considerably more uncertainty than that from the former, and the fit was worse. During the course of the experiment, we observed that turning on the magnetic field caused the spin of the ball to wobble. By the end of one precession period, the spin was not as stable as it was when it started. This prevented us from measuring the time for several periods of precession to get a better precision. Taking multiple measurements at the same $I$ would not have helped much with the wobble -- this is a source of systematic bias. The wobble effectively reduces the angular momentum, so for a fixed/know values of $\mu$ and $B$, the measured value of $\omega$ would increase if the angular momentum were reduced. However, it probably would have been a good idea to take repeated measurements anyway, seeing as we had extra time and we might have found a way to get rid of the wobble in taking those measurements. 
+
+The value of the reduced $\chi^2$ in the fit for gravitational torque is also something to be remarked upon. We had anticipated that the range of values over which the ball seemed balanced would contribute greatly to experimental error, so we took the conservative approach with estimating uncertainties and deemed it to be half the range of currents over which the ball seemed balanced. However, it seems that the position which we take to mean ``balanced'' does not matter as long as we keep the position consistent across measurements. To see this, consider the graph in Figure \ref{gravfit}. If we had taken the lower position to be the balanced position, all it would have done to our data is shift the graph downward by some amount, which does not affect the slope of the line. Then, if we re-do the fit with $\pm0.02$A as the uncertainty in the coil current, we get a reduced $\chi^2$ of 0.07. This is still fairly low, but at this point our uncertainty is at instrument resolution and we cannot realistically estimate a lower uncertainty. 
+
+As for the calculation of the gyromagnetic ratio of the electron, our result was close to literature values, landing within uncertainty. There isn't much of note here, since the fit ended up with a reduced $\chi^2$ value very close to $1$. Not much could have been done to improve the precision of the measurements, since our uncertainties in both $x$ and $y$ were taken from instrument resolutions. We attempted to eliminate systematic error in the interpretation of the oscilloscope output by alternating between people when taking measurements, though there does not seem to be any correlation between the person taking the measurements and whether the data point is above or below the fit (one person did 24.50, 29.22, and 31.95MHz, the other person did the rest of them). 
+
+Our observations of classical spin resonance matched up quite well with what theory predicts. We observed that the ball would flip over when the saddle was rotated so as to keep the axis of the ball perpendicular to the field generated by the saddle, and that it was only slightly perturbed when the saddle was rotated at a different frequency or in the opposite direction. When the frequencies do not match up, the torque exerted on the dipole by the saddle field will be sinusoidal with average $0$. If this period is small, then there will not be enough time for a noticeable effect to accumulate in the angular momentum of the ball. We see this in the observation of electron spin resonance, where the peaks observed from the detector were fairly localized in space, suggesting that the electron only flipped its spin for frequencies very close to its `precession frequency'. 
+
+When observing electron spin, we observed the output from the detector when the RF emitter's magnetic field was positioned to be parallel to the field generated by the coils. In this configuration, we observed no resonance peaks. This configuration is analogous to the classical configuration of varying the vertical field sinusoidally. This would not produce resonance, as the vertical field cannot exert any torque which would cause the rotational axis of the ball to change its angle relative to vertical.
+\end{document}
+

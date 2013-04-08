@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path3784"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="373.03824"
+     inkscape:cy="684.37157"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="910"
+     inkscape:window-height="776"
+     inkscape:window-x="422"
+     inkscape:window-y="139"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 3;stroke-dashoffset:0.2"
+       id="path2985"
+       sodipodi:cx="375.71429"
+       sodipodi:cy="300.93362"
+       sodipodi:rx="221.42857"
+       sodipodi:ry="115.71429"
+       d="m 597.14287,300.93362 a 221.42857,115.71429 0 1 1 -442.85715,0 221.42857,115.71429 0 1 1 442.85715,0 z"
+       transform="matrix(1,0,0,1.0718915,-4.2857143,-142.81057)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:4,1;stroke-dashoffset:0"
+       d="m 372.85714,179.50504 0,435.71429"
+       id="path3755"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend);stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 372.85714,616.6479 202.85715,-390"
+       id="path3757"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path4213"
+       sodipodi:cx="372.85715"
+       sodipodi:cy="613.07648"
+       sodipodi:rx="37.142857"
+       sodipodi:ry="36.42857"
+       d="m 372.85715,576.64791 a 37.142857,36.42857 0 0 1 18.57143,4.8805"
+       sodipodi:start="4.712389"
+       sodipodi:end="5.2359878"
+       sodipodi:open="true"
+       transform="matrix(1.5219666,0,0,1.5219666,-195.56123,-322.16909)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4219"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(265.71429,95.714286)"><flowRegion
+         id="flowRegion4221"><rect
+           id="rect4223"
+           width="29.999996"
+           height="47.142857"
+           x="110"
+           y="418.07648"
+           ry="4.2857141" /></flowRegion><flowPara
+         id="flowPara4227">θ </flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4231"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(51.428571,-112.85714)"><flowRegion
+         id="flowRegion4233"><rect
+           id="rect4235"
+           width="38.57143"
+           height="60"
+           x="490"
+           y="405.21933" /></flowRegion><flowPara
+         id="flowPara4237">L</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 371.42857,180.93361 202.85714,42.85714"
+       id="path4239"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:37.32997131px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="546.59674"
+       y="65.73822"
+       id="text4241"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.89199198,0.22732186,-0.2682818,1.0527154,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4243"
+         x="546.59674"
+         y="65.73822"><tspan
+           style="line-height:124.00000095%"
+           id="tspan4245"><tspan
+             style="line-height:123.00000191%"
+             id="tspan4249"><tspan
+               style="line-height:122.00000286%"
+               id="tspan4253"><tspan
+                 style="line-height:123.00000191%"
+                 id="tspan4257"><tspan
+                   style="line-height:124.00000095%"
+                   id="tspan4261"><tspan
+                     style="line-height:125%"
+                     id="tspan4265"><tspan
+                       style="font-size:9.33249283px"
+                       id="tspan4267"><tspan
+                         style="font-size:18.66498566px"
+                         id="tspan4269">L sinθ </tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></text>
+  </g>
+</svg>
